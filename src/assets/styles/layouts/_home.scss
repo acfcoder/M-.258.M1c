@@ -6,48 +6,74 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  margin: 0;
   padding: 2rem;
+  margin: 0;
   font-family: $font-family-sans-serif;
   font-size: 16px;
   line-height: 24px;
+  color: $textos;
   background-color: $uoc-bg;
-  color: $uoc-corporate;
+
+  @media (max-width: $mqMinWidth) {
+  padding: 1.5rem .5%;
+  }
 }
 
 .uoc-container {
-  max-width: 800px;
+  width: 95%;
+  max-width: 960px;
+  padding: 3rem 3rem 5rem;
   margin: auto;
-  padding: 3rem;
-  border-radius: 2rem;
-  text-align: center;
+  text-align: left;
   background-color: #fff;
+  border-radius: 1rem;
   box-shadow: 0 4px 6px 3px rgba(0, 0, 0, 0.2),
     0 2px 4px -1px rgba(0, 0, 0, 0.76);
+
+  @media (max-width: $mqMinWidth) {
+  padding: 1rem 1rem 3rem;
+  }
 }
 
-.uoc-logo {
+picture {
   display: block;
-  margin-left: auto;
+  max-width: 180px; 
+  height: auto;
   margin-right: auto;
   margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
+  margin-left: auto;
+  text-align: center;
 
-  @media (min-width: $mqMinWidth) {
+  @media (max-width: $mqMinWidth) {
     max-width: none;
   }
 }
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
+picture img{ 
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 90px;
+}
 
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
+.title {
+  display: flex;
+  font-family: $font-family-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2rem;
+  color: $section;
+
+  @media (max-width: $mqMinWidth) {
+    display: block;
+    margin: 0 58px 0 0;
   }
+}
+
+.title h1::before {
+  display: table-cell;
+  padding-right: 4px;
+  margin-left: -50px;
+ content: "CV | "; 
 }
 
 .uoc-footer {
@@ -55,3 +81,146 @@ body {
   font-size: 0.75rem;
   text-align: center;
 }
+
+.icon {
+  padding-right: 16px;
+  color: $section;
+}
+.seccio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+ 
+}
+
+.clear {
+  display: block;
+  width: 100%;
+}
+
+h1{
+  float: left;
+}
+
+h2 {
+  float: none !important; 
+  padding: 18px 75% 8px 0;
+  font-size: 1.2rem; 
+  font-style: italic;
+  font-weight: 600;
+  color: $section; 
+  text-align: right;
+  border-bottom: 2px solid $section;
+
+  @media (max-width: $mqMinWidth) {
+  padding: 18px 4px 8px;
+  text-align: left;
+  }
+}
+
+.left-side{
+  width: 25%;
+  min-width: 150px;
+  text-align: right;
+ 
+  @media (max-width: $mqMinWidth) {
+    width: 100%;
+    padding: 0 4px;
+    margin: 0;
+    text-align: left;
+    
+  }
+}
+
+.right-side {
+  float: right;
+  width: 75%;
+
+  @media (max-width: $mqMinWidth) {
+    width: 100%;
+    padding: 0 0 .5rem .5rem;
+    margin: .5rem;
+    text-align: left;
+  }
+}
+
+.title .right-side {
+  @media (max-width: $mqMinWidth) {
+    display: table-row;
+    padding-left: 10px;
+    margin: 0 0 1rem 0;
+  }
+}
+
+p.right-side{
+  padding-left: 40px;
+
+  @media (max-width: $mqMinWidth) {
+    padding: 0;
+  }
+}
+
+ul li{
+  list-style-type: none;
+}
+
+p.left-side { 
+  font-size: 1rem;
+  font-weight: 400;
+  color: $section;
+
+
+  @media (max-width: $mqMinWidth) {
+   margin: 0 10px 0 0;
+  }
+}
+
+ul>ul.secondary li { 
+  display: table-row;
+  padding-left: 8px;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400; 
+  line-height: 1.5rem;
+  color: $textos;
+}
+
+ul.main li:first-child {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $section;
+}
+
+ul.main li:nth-child(2){
+  margin-bottom: 4px;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
+ul.main>ul.secondary li { 
+  display: table-row;
+  padding-left: 8px;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400; 
+  line-height: 1.5rem;
+  color: $textos;
+}
+
+.secondary {padding-left: 6px;}
+
+ul.secondary>li::before {
+  display: table-cell;
+  padding-right: 4px; 
+  content: "- ";
+}
+
+.desktop {display: flex;
+
+  @media (max-width: $mqMinWidth) {
+  display: none;
+  }
+}
+
